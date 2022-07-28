@@ -3,8 +3,9 @@ import styles from './ProductList.module.css'
 import { useState, useEffect } from 'react' //react Hook
 import Title from './Title'
 import MainBanner from './MainBanner'
+import IndexTitle from './IndexTitle'
 import ImageBTN from './ImageBTN'
-
+import RecommedProduct from './RecommedProduct'
 export default function Home() {
     let [ProductList, setProductList] = useState([])
     let [Input, setInput] = useState('')
@@ -36,75 +37,17 @@ export default function Home() {
         <div className='py-5'>
         <ImageBTN />
         </div>
-       <div className="container">
-        <div className="row product-list">
-            <div className="col-md-3">
-                <section className="panel">
-                    <div className="pro-img-box">
-                        <img src={process.env.PUBLIC_URL+'/img/product01.jpg'} alt="" />
-                        <Link to={'/'} className="adtocart">
-                            <i className="fa fa-shopping-cart"></i>
-                        </Link>
-                    </div>
-
-                    <div className="panel-body text-center">
-                        <h4>
-                            <Link to={'/'} className="pro-title panel-title">
-                                Leopard Shirt Dress
-                            </Link>
-                        </h4>
-                        <p className="price">$300.00</p>
-                    </div>
-                </section>
-            </div>
-
-            <div className="col-md-3">
-                <section className="panel">
-                    <div className="pro-img-box">
-                    <img src={process.env.PUBLIC_URL+'/img/product02.jpg'} alt=""/>
-                       
-                        <Link to={'/'} className="adtocart">
-                            <i className="fa fa-shopping-cart"></i>
-                        </Link>
-                    </div>
-
-                    <div className="panel-body text-center">
-                        <h4>
-                            <Link to={'/'} className="pro-title panel-title">
-                                Leopard Shirt Dress
-                            </Link>
-                        </h4>
-                        <p className="price">$300.00</p>
-                    </div>
-                </section>
-            </div>
-
-            <div className="col-md-3">
-                <section className="panel">
-                    <div className="pro-img-box">
-                    <img src={process.env.PUBLIC_URL+'/img/product03.jpg'} alt=""/>
-                       
-                        <Link to={'/'} className="adtocart">
-                            <i className="fa fa-shopping-cart"></i>
-                        </Link>
-                    </div>
-
-                    <div className="panel-body text-center">
-                        <h4>
-                            <Link to={'/'} className="pro-title panel-title">
-                                Leopard Shirt Dress
-                            </Link>
-                        </h4>
-                        <p className="price">$300.00</p>
-                    </div>
-                </section>
-            </div>
+        
+        <div className="container">
+            <RecommedProduct indexTitle='Fresh Fruit' leftImage='url(/img/test-indexproduct.jpg)'/>
+            <RecommedProduct indexTitle='Snack' leftImage='url(/img/test-indexproduct02.jpg)'/>
+            <RecommedProduct indexTitle='Test' leftImage='url(/img/test-indexproduct03.jpg)'/>
+            <RecommedProduct indexTitle='Beverage' leftImage='url(/img/test-indexproduct.jpg)'/>
         </div>
-        </div>
-        <input type="text" onChange={ e => setInput(e.target.value)} />
+        {/* <input type="text" onChange={ e => setInput(e.target.value)} /> */}
         {/* <button onClick={() => setProductList('change')}> product list</button> */}
-      <Title mainTitle="請選擇要購買的水果" />
-      <div>
+      {/* <Title mainTitle="請選擇要購買的水果" /> */}
+      {/* <div>
         {
            ProductList.map(product=>(
                 <div className={styles.productBorder} key={product.id}>
@@ -118,7 +61,7 @@ export default function Home() {
                 </div>
             ))
         }
-        </div>
+        </div> */}
 
         
     </div>

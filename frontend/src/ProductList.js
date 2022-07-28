@@ -159,7 +159,7 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/'} className="pro-title">
+                                    <Link to={'/product'} className="pro-title">
                                         Leopard Shirt Dress
                                     </Link>
                                 </h4>
@@ -178,7 +178,7 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/'} className="pro-title">
+                                    <Link to={'/product'} className="pro-title">
                                         Leopard Shirt Dress
                                     </Link>
                                 </h4>
@@ -197,7 +197,7 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/'} className="pro-title">
+                                    <Link to={'/product'} className="pro-title">
                                         Leopard Shirt Dress
                                     </Link>
                                 </h4>
@@ -216,7 +216,7 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/'} className="pro-title">
+                                    <Link to={'/product'} className="pro-title">
                                         Leopard Shirt Dress
                                     </Link>
                                 </h4>
@@ -235,7 +235,7 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/'} className="pro-title">
+                                    <Link to={'/product'} className="pro-title">
                                         Leopard Shirt Dress
                                     </Link>
                                 </h4>
@@ -254,7 +254,7 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/'} className="pro-title">
+                                    <Link to={'/product'} className="pro-title">
                                         Leopard Shirt Dress
                                     </Link>
                                 </h4>

@@ -6,10 +6,10 @@ export default function Contact() {
   return (
     <div>
     <Title mainTitle="Contact" />
-    <div class="content">
+    <div class="contact-content py-5">
       <div class="container">
       <div class="row align-items-stretch no-gutters contact-wrap">
-      <div class="col-md-8">
+      <div class="col-md-8 bg-white">
       <div class="form h-100">
       <h3>Send us a message</h3>
       <form class="mb-5" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
@@ -52,7 +52,7 @@ export default function Contact() {
       </div>
       </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 bg-green">
       <div class="contact-info h-100">
       <h3>Contact Information</h3>
       <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, magnam!</p>
