@@ -21,6 +21,9 @@ export default function Header() {
       </form>
       <ul className="nav">
       <li className="nav-item">
+            <Link to="/cart" className='nav-link text-white px-2'>Shopping Bag</Link>
+        </li>
+        <li className="nav-item">
             <Link to="/checkout" className='nav-link text-white px-2'>CheckOut</Link>
         </li>
         <li className="nav-item">

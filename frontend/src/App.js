@@ -11,6 +11,7 @@ import Footer from './Footer';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
+import Cart from './Cart';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/productlist' element={<ProductList/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
