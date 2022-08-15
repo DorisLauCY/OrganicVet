@@ -1,7 +1,19 @@
-import React from 'react'
+import { useContext } from 'react'
 import Title from './Title'
+import{Link} from 'react-router-dom'
+// import QuantityBtn from './QuantityBtn'
+import { CartContext } from './CartContext'
 
 export default function Checkout() {
+
+  let {cartItems} = useContext(CartContext)
+  let cartEmpty = cartItems.length<=0 ? true : false
+
+  let grandTotal = cartItems.reduce((total, product)=>{
+    return total += product.price*product.quantity
+  },0)
+  const freeShippingPrice = 99
+
   return (
     <div>
   
@@ -14,14 +26,34 @@ export default function Checkout() {
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            {
+              cartEmpty &&
               <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+                Empty Product<br />
+                <Link to="/">Go to product page </Link>
               </div>
-              <span class="text-muted">$12</span>
+            }
+          </li>
+          {
+          !cartEmpty &&
+          <div>
+          {cartItems.map(product => (
+            <li className='list-group-item d-flex justify-content-between lh-condensed' key={product.id}>
+              <div>
+              <img src={process.env.PUBLIC_URL+'/img/'+product.image} alt={product.name} style={{width:'100px'}}/>
+                <h6 class="my-0">  {product.name}</h6>
+                <small class="text-muted">{product.description}</small>
+              </div>
+              <span class="text-muted">{product.price}</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+          ))
+          }
+          </div>
+          } 
+
+            {/* <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Second product</h6>
                 <small class="text-muted">Brief description</small>
@@ -45,7 +77,7 @@ export default function Checkout() {
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
               <strong>$20</strong>
-            </li>
+            </li> */}
           </ul>
 
           <form class="card p-2">

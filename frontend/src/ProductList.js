@@ -148,10 +148,13 @@ export default function ProductList() {
                     </div>
                 </section> */}
                 <div class="row product-list">
+                {
+                    ProductList.map(product=>(
                     <div class="col-md-3">
                         <section class="panel">
                             <div class="pro-img-box">
-                                <img src={process.env.PUBLIC_URL+'/img/product01.jpg'} alt="" />
+                                <img src={process.env.PUBLIC_URL+'/img/'+product.image} alt="" />
+                               
                                 <Link to={'/'} className="adtocart">
                                     <i class="fa fa-shopping-cart"></i>
                                 </Link>
@@ -159,14 +162,16 @@ export default function ProductList() {
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <Link to={'/product'} className="pro-title">
-                                        Leopard Shirt Dress
+                                    <Link to={'/product/'+product.id} className="pro-title">
+                                        {product.name}
                                     </Link>
                                 </h4>
-                                <p class="price">$300.00</p>
+                                <p class="price"> ${product.price}</p>
                             </div>
                         </section>
                     </div>
+                     ))
+                    }
                     <div class="col-md-3">
                         <section class="panel">
                             <div class="pro-img-box">

@@ -1,12 +1,31 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
-import IndexTitle from './IndexTitle'
+// import IndexTitle from './IndexTitle'
+import React, { useState, useEffect } from 'react' //react Hook
+// import QuantityBtn from './QuantityBtn'
+
 
 export default function RecommedProduct({indexTitle, leftImage}) {
+    let [ProductList, setProductList] = useState([])
+    // let [Input, setInput] = useState('')
+    // console.log(ProductList)
+
+    
+
+    // useEffect
+    useEffect(() => {
+        //component 每次render
+        fetch('https://hoyinleung.github.io/demoapi/react-basic-product.json')
+        .then(response => response.json())
+        .then(data => setProductList(data))
+        console.log(ProductList)
+    },[ProductList]) // < == Dependeny array
+
   return (
     <section className='py-4'>
         <h2 className='indextitle'>{indexTitle}</h2>
-        
+
+       
+
             <div className="row product-list">
                 <div className="col-md-4">
                     <section className="panel">
@@ -17,27 +36,31 @@ export default function RecommedProduct({indexTitle, leftImage}) {
                     </div>
                     </section>
                 </div>
-                <div className="col-md-2">
+
+                {
+                    ProductList.map(product=>(
+                <div className="col-md-2"  key={product.id}>
                     <section className="panel">
                         <div className="pro-img-box">
-                            <img src={process.env.PUBLIC_URL+'/img/product01.jpg'} alt="" />
+                        <img src={process.env.PUBLIC_URL+'/img/'+product.image} alt="" style={{ height:'150px'}}/>
                             <Link to={'/'} className="adtocart">
                                 <i className="fa fa-shopping-cart"></i>
                             </Link>
                         </div>
-
+                        {/* <QuantityBtn productInfo={product}/> */}
                         <div className="panel-body text-center">
                             <h4>
-                                <Link to={'/product'} className="pro-title panel-title">
-                                    Leopard Shirt Dress
-                                </Link>
+                                <a href={'/product/'+product.id} className="pro-title panel-title">
+                                    {product.name}
+                                </a>
                             </h4>
-                            <p className="price">$300.00</p>
+                            <p className="price">${product.price}</p>
                         </div>
                     </section>
                 </div>
-
-                <div className="col-md-2">
+                ))
+                }
+                {/* <div className="col-md-2">
                     <section className="panel">
                         <div className="pro-img-box">
                         <img src={process.env.PUBLIC_URL+'/img/product02.jpg'} alt=""/>
@@ -98,7 +121,7 @@ export default function RecommedProduct({indexTitle, leftImage}) {
                             <p className="price">$300.00</p>
                         </div>
                     </section>
-                </div>
+                </div> */}
 
             </div>
         </section>

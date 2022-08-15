@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <div >
         <nav className="navbar navbar-expand-sm navbar-dark bg-white bottom-border">
+          <div className='container'>
         <Link to="/" className="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
         <img src={process.env.PUBLIC_URL+'/img/logo_small.png'} alt="" style={{width:'100px'}}/>
         </Link>
@@ -15,16 +16,17 @@ export default function Footer() {
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link to="/" className="nav-link green-link">Home</Link>
+            <Link to="/about" className="nav-link green-link">About</Link>
           </li>
           <li class="nav-item">
-            <Link to="/" className="nav-link  green-link">Link</Link>
+            <Link to="/productlist" className="nav-link  green-link">Product</Link>
           </li>
           <li class="nav-item">
-            <Link to="/" className="nav-link  green-link">Disabled</Link>
+            <Link to="/contact" className="nav-link  green-link">Contact</Link>
           </li>
-          
         </ul>
+      </div>
+      <div className="float-right">©OrganicVet.All rights reserved.</div>
       </div>
     </nav>
 
